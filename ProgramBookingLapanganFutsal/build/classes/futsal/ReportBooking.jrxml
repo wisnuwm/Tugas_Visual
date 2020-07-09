@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a523c4f5-efb8-48ef-a204-b495bc5aa31e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     book_lapangan.`nama_team` AS book_lapangan_nama_team,
+     book_lapangan.`nama_lapangan` AS book_lapangan_nama_lapangan,
+     book_lapangan.`harga_perjam` AS book_lapangan_harga_perjam,
+     book_lapangan.`sewa` AS book_lapangan_sewa,
+     book_lapangan.`total_harga` AS book_lapangan_total_harga,
+     book_lapangan.`tanggal_book` AS book_lapangan_tanggal_book,
+     book_lapangan.`jam_masuk` AS book_lapangan_jam_masuk,
+     book_lapangan.`jam_keluar` AS book_lapangan_jam_keluar,
+     book_lapangan.`no_telp` AS book_lapangan_no_telp
+FROM
+     `book_lapangan` book_lapangan]]>
+	</queryString>
+	<field name="book_lapangan_nama_team" class="java.lang.String"/>
+	<field name="book_lapangan_nama_lapangan" class="java.lang.String"/>
+	<field name="book_lapangan_harga_perjam" class="java.lang.Integer"/>
+	<field name="book_lapangan_sewa" class="java.lang.Integer"/>
+	<field name="book_lapangan_total_harga" class="java.lang.Integer"/>
+	<field name="book_lapangan_tanggal_book" class="java.sql.Date"/>
+	<field name="book_lapangan_jam_masuk" class="java.lang.String"/>
+	<field name="book_lapangan_jam_keluar" class="java.lang.String"/>
+	<field name="book_lapangan_no_telp" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="5" width="263" height="33" forecolor="#000000" backcolor="#FFFFFF" uuid="bef90c9c-e5ef-4d94-a9f4-3ae0ef4058b9"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="28" isItalic="true" isUnderline="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Booking]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="63" y="39" width="200" height="22" forecolor="#000000" uuid="8e40fbfc-f01b-4b9c-9a4c-242a80c9b9d7"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Laporan Booking]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="40" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="59893597-8908-4699-8e32-fd9bc24c3969"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="61" height="35" uuid="7aa2dfde-4613-4b5e-afa8-1b570166f359"/>
+				<text><![CDATA[nama team]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="61" y="0" width="61" height="35" uuid="80411e53-5c17-46fe-a362-a6680c7e0217"/>
+				<text><![CDATA[nama lapangan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="263" y="0" width="42" height="35" uuid="26f4963e-508d-456b-94da-eec2a85e7d73"/>
+				<text><![CDATA[total harga]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="305" y="0" width="61" height="36" uuid="52a9170c-7a27-43c0-b1ac-d190f1aacc1f"/>
+				<text><![CDATA[tanggal book]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="366" y="0" width="61" height="36" uuid="9bce0d62-f308-451d-aeec-c89f29915e00"/>
+				<text><![CDATA[jam masuk]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="427" y="0" width="61" height="36" uuid="657b2b0e-8d9b-4c69-94cd-f3be69a3db60"/>
+				<text><![CDATA[jam keluar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="183" y="0" width="45" height="22" uuid="f22e7aea-e093-4337-930d-579649145684"/>
+				<text><![CDATA[sewa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="122" y="0" width="61" height="36" uuid="d8a509ef-1570-4676-8017-f08f0d29a05b"/>
+				<text><![CDATA[harga perjam]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="481f5d69-a5e4-4255-ae9f-3c5162f1d5b7"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="61" height="15" uuid="e6dff968-a367-4858-b6f9-0e57326bb2af"/>
+				<textFieldExpression><![CDATA[$F{book_lapangan_nama_team}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="61" y="0" width="61" height="15" uuid="f86477fe-072c-42ed-be59-47c9020a2607"/>
+				<textFieldExpression><![CDATA[$F{book_lapangan_nama_lapangan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="122" y="0" width="61" height="15" uuid="35fc2421-1efd-470f-a3e6-b7e56497a01d"/>
+				<textFieldExpression><![CDATA[$F{book_lapangan_harga_perjam}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="183" y="0" width="61" height="15" uuid="947dc168-0998-470e-b380-2dfbe84eaf99"/>
+				<textFieldExpression><![CDATA[$F{book_lapangan_sewa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="244" y="0" width="61" height="15" uuid="f7ceecfd-194b-45fa-ab7e-d504a1ddf776"/>
+				<textFieldExpression><![CDATA[$F{book_lapangan_total_harga}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="305" y="0" width="61" height="15" uuid="5479b838-59c2-4aeb-bff5-e470d8d3659f"/>
+				<textFieldExpression><![CDATA[$F{book_lapangan_tanggal_book}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="366" y="0" width="61" height="15" uuid="68a61001-aa63-475a-a7df-e04e8e15b758"/>
+				<textFieldExpression><![CDATA[$F{book_lapangan_jam_masuk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="427" y="0" width="61" height="15" uuid="af9eb41a-4eb0-4386-83d5-2c84d3bb5017"/>
+				<textFieldExpression><![CDATA[$F{book_lapangan_jam_keluar}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="8007427a-a7a5-4892-af68-f56b75ca3f8c"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="6c7f548d-bafb-4cf7-b28a-962b31a08118"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="7047a952-fedb-4988-ad3d-0a37f07aabd4"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="4ed189a1-4ba8-42cf-95b0-b81f05d319aa"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

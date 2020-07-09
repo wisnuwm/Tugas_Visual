@@ -1,0 +1,14 @@
+-ADMIN-
+User : admin
+Pass : admin
+
+-KASIR-
+User : kasir
+pass : 12345
+
+Master Data yang sudah jadi :
+1. Master Data Barang : Login -> Admin -> Input_Barang yang datanya bisa dilihat juga oleh Kasir di form Barang
+2. Master Data Karyawan : Login -> Admin -> Input_Karyawan
+
+Transaksi Yang sudah jadi :
+1. Transaksi Penjualan : Login -> Kasir -> Transaksi_Penjualan_Kasir yang selanjutnya datanya bisa diakses oleh Admin di Transaksi_Penjualan_Admin
